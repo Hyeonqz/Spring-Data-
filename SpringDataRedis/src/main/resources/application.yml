@@ -1,0 +1,30 @@
+spring:
+  jpa:
+    show-sql: true
+    generate-ddl: true
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        format_sql: true
+    open-in-view: false
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/mysql?useSSL=false&useUnicode=true&allowPublicKeyRetrieval=true
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 1234
+
+  data:
+    redis:
+      # 기본 IP 가 127.0.0.1 에 6379 일 경우 host,port 연결 X -> 기본적으로 위 ip 랑 포트로 연결
+      host: 127.0.0.1
+      port: 6379
+      database: 0
+      connect-timeout: 5s
+      timeout: 5s
+      client-name: redisGate
+
+logging:
+  level:
+    root: info
